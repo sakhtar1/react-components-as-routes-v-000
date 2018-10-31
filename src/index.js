@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Home!</h1>
-    </div>
-  );
-};
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
-ReactDOM.render(
-  <Home />,
+ReactDOM.render((
+  <Router>
+    <React.Fragment>
+      <Route path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/login" component={Login} />
+    </React.Fragment>
+  </Router>),
   document.getElementById('root')
 );
